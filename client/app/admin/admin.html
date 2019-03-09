@@ -1,0 +1,44 @@
+<br><br>
+<div class="content_space" ng-controller="AdminController">
+  <h1>Admin page</h1>
+  <br><br>
+  <div class="input-field">
+    <input type="text"  class="form-control" ng-model="searchQuery" required step="font-size:10px;">
+    <label class="active" style="font-size:14px;">Enter Search Query</label>
+  </div>
+  <br><br>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <strong>User Management</strong>
+    </div>
+    <!-- <div ng-show="true">
+
+    </div> -->
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>College</th>
+        <th>Email</th>
+      </tr>
+      <tr ng-repeat="user in users | filter:searchQuery">
+        <td ng-model="show" >{{user.name}}</td>
+        <td>{{user.college}}</td>
+        <td>{{user.email}}</td>
+        <td>
+          <div ng-repeat=" i in user.events" ng-show="show">
+            {{i}}
+          </div>
+        </td>
+        <td>
+          <a href="#">
+            <button type="button" class="btn btn-primary" ng-click="show=!show">Events</button>
+          </a>
+          <!-- <a href="#">
+            <button type="button" class="btn btn-danger">Delete</button>
+          </a> -->
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>

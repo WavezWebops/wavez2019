@@ -1,0 +1,134 @@
+@import '../bower_components/font-awesome/scss/font-awesome';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto:100,300,400,500,700');
+@import 'about/about.scss';
+@import 'admin/admin.scss';
+@import 'contact/contact.scss';
+@import 'event/event.scss';
+@import 'events/events.scss';
+@import 'hospitality/hospitality.scss';
+@import 'main/main.scss';
+@import 'schedule/schedule.scss';
+@import 'sponsors/sponsors.scss';
+@import 'workshop/workshop.scss';
+@import 'workshops/workshops.scss';
+@import '../components/oauth-buttons/oauth-buttons.scss';
+/**
+ * App-wide Styles
+ */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+.workshopcard {
+  height: 30vh;
+}
+.workshoppage {
+  margin-left: 25vw;
+}
+.padding20 {
+  padding: 20px;
+}
+.content_space {
+  padding: 5vh 2vw;
+  text-align: center;
+}
+.home_space {
+  margin-top: 5vh;
+  text-align: center;
+  padding: 20px;
+}
+.main_heading {
+  font-family: "Raleway", "Roboto", sans-serif;
+  color: #6b6e6c;
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 84px;
+}
+.p_content {
+  font-family: "Raleway", "Roboto", sans-serif;
+  color: #6b6e6c;
+  text-align: center;
+  font-size: 20px;
+  line-height: 30px;
+}
+.nav_title {
+  font-family: 'Raleway', 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 30px;
+}
+.nav-wrapper {
+  margin-left: 200px !important;
+}
+.side-nav .collapsible-body > ul:not(.collapsible) > li.active, .side-nav.fixed .collapsible-body > ul:not(.collapsible) > li.active {
+  background-color: #0d47a1 !important;
+}
+.width250 {
+  width: 250px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 10px;
+  border-radius: 0px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.whitebg {
+  background-color: white;
+  border-radius: 0px;
+}
+.left_align {
+  text-align: left;
+}
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .widcard {
+    width: 60vw;
+    margin-left: 20vw;
+  }
+  .container {
+    max-width: 730px;
+  }
+}
+.ngcard {
+  width: 50vw;
+  margin-left: 25vw;
+  border-radius: 15px;
+}
+@media screen and (max-width: 769px) {
+  .workshopcard {
+    height: 40vh;
+  }
+  .workshoppage {
+    margin-left: 0vw;
+  }
+  .widcard {
+    width: 95vw;
+    margin-left: 0.5vw;
+  }
+  .ngcard {
+    width: 100vw;
+    margin-left: 0vw;
+    border-radius: 15px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .content_space {
+    margin-left: 0;
+  }
+  .home_space {
+    margin-left: 0;
+    padding: 5px;
+  }
+  .nav-wrapper {
+    margin-left: 0 !important;
+  }
+  .nav_title {
+    font-size: 16px;
+    font-weight: 100;
+  }
+}
+/* inject:scss */
+/* endinject */

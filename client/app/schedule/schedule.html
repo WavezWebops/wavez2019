@@ -1,0 +1,93 @@
+<div class="content_space" style="overflow-x: hidden;">
+	<br>
+	<h1 class="main_heading">
+		Schedule
+	</h1>
+	<div class="row" style="text-align: left;">
+		<div class="col s12 l12 m12">
+			<ul class="tabs z-depth-2 animated fadeIn" style="height: 75px;">
+				<li class="tab col s4 m4 l4" style="height: 75px;">
+					<a href="#day1" class="active blue darken-4 white-text" style="font-size: 20px;line-height: 75px;vertical-align: middle;font-family: 'Raleway','Roboto',sans-serif; font-weight: 100;">
+						<span class="hide-on-med-and-down">
+							Day 1
+						</span>
+						&nbsp;&nbsp;
+						<span style="font-size: 15px;">
+							<span class="hide-on-med-and-down">
+								(March
+							</span>
+								11th
+							<span class="hide-on-med-and-down">
+								)
+							</span>
+						</span>
+					</a>
+				</li>
+				<li class="tab col s4 m4 l4" style="height: 75px;">
+					<a href="#day2" class="blue darken-4 white-text" style="font-size: 20px;line-height: 75px;vertical-align: middle;font-family: 'Raleway','Roboto',sans-serif; font-weight: 100;">
+						<span class="hide-on-med-and-down">
+							Day 2
+						</span>
+						&nbsp;&nbsp;
+						<span style="font-size: 15px;">
+							<span class="hide-on-med-and-down">
+								(March
+							</span>
+								12th
+							<span class="hide-on-med-and-down">
+								)
+							</span>
+						</span>
+					</a>
+				</li>
+				<li class="tab col s4 m4 l4" style="height: 75px;">
+					<a href="https://res.cloudinary.com/abinthomasonline/image/upload/v1488818145/Wavez2017/pdf/schedule.pdf" target="_blank" class="blue darken-4 white-text" style="font-size: 20px;line-height: 75px;vertical-align: middle;font-family: 'Raleway','Roboto',sans-serif; font-weight: 100;">
+						PDF
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div id="day1" class="col s12 l12 m12">
+			<ul class="collection animated fadeIn z-depth-1" style="margin-top: 0;">
+				<li class="collection-item avatar hoverable" style="cursor: pointer;" ng-repeat="d1 in scheduleCtrl.day1">
+					<img ng-src="{{d1.img}}" class="circle">
+					<span class="title p_content" style="font-size: 25px;">
+						{{d1.title}}
+					</span>
+					<p class="grey-text text-lighten-1 p_content" style="text-align: left;">
+						{{d1.time}}
+					</p>
+					<a ng-href="{{d1.url}}" class="secondary-content blue-text text-darken-4">
+						<i class="material-icons">
+							launch
+						</i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div id="day2" class="col s12 l12 m12">
+			<ul class="collection animated fadeIn z-depth-1" style="margin-top: 0;">
+				<li class="collection-item avatar hoverable" style="cursor: pointer;" ng-repeat="d2 in scheduleCtrl.day2">
+					<img ng-src="{{d2.img}}" class="circle" ng-hide="d2.img==null">
+					<i class="material-icons circle blue" ng-show="d2.url==null">record_voice_over</i>
+					<span class="title p_content" style="font-size: 25px;">
+						{{d2.title}}
+					</span>
+					<p class="grey-text text-lighten-1 p_content" style="text-align: left;">
+						{{d2.time}}
+					</p>
+					<a ng-href="{{d2.url}}" class="secondary-content blue-text text-darken-4" ng-hide="d2.url==null">
+						<i class="material-icons">
+							launch
+						</i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+	    $('ul.tabs').tabs();
+	});
+</script>

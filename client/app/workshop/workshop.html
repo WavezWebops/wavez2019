@@ -1,0 +1,42 @@
+<div class="content_space" style="overflow-x: hidden;">
+	<br>
+	<h1 class="main_heading">
+		{{workshopCtrl.workshop.name}}
+	</h1>
+	<div class="center-align" id="event_buttons">
+		<a class="waves-effect waves-light btn black darken-4" ng-hide="workshopCtrl.workshop.writeup==null" ng-click="workshopCtrl.index=1">Home</a>
+		<a class="waves-effect waves-light btn black darken-4" ui-sref="dashboard">Register</a>
+		<a class="waves-effect waves-light btn black darken-4" ng-click="workshopCtrl.index=3">Contact</a>
+		<a class="waves-effect waves-light btn-floating black darken-4 btn-large" ui-sref="workshops"><i class="material-icons">clear</i></a>
+	</div>
+	<br>
+	<br>
+	
+	<div class="whitebg animated fadeIn card-panel row" ng-hide="(workshopCtrl.index!=1)">
+		<div class="col s6 m6 l3">
+			<img src="https://res.cloudinary.com/abinthomasonline/image/upload/c_scale,f_auto,q_auto:eco,w_170/v1487735028/Wavez2017/rules.png" width="170px">
+		</div>
+		<div class="col s12 m12 l9 blue-grey-text text-darken-4 left_align event_caption">
+			<ul>
+				<li ng-repeat="r in workshopCtrl.workshop.writeup">
+					<p>
+						 <span ng-bind-html="r"></span>
+					</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="whitebg animated fadeIn card-panel row" ng-hide="workshopCtrl.index!=3">
+		<div class="col s6 m6 l3">
+			<img src="https://res.cloudinary.com/abinthomasonline/image/upload/c_scale,f_auto,q_auto:eco,w_170/v1487735026/Wavez2017/contact.png" width="170px">
+		</div>
+		<div class="col s12 m12 l9 blue-grey-text text-darken-4 left_align event_caption">
+			<p ng-repeat="c in workshopCtrl.workshop.contacts">
+				{{c.name}}
+				<br>
+				{{c.mobile}}, {{c.email}}
+				<br>
+				<br>
+			</p>
+		</div>
+	</div>

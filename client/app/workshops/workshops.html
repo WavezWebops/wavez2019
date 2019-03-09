@@ -1,0 +1,15 @@
+<div class="content_space">
+	<h1 class="main_heading">
+		Workshops
+	</h1>
+<!--	<div class="workshoppage">-->
+	<div class="row ">
+		<div class="col s12 m6 l4" ng-repeat="w in workshopsCtrl.workshops">
+			<div class="width250 hoverable grey lighten-4 z-depth-1 blue-grey-text text-darken-4 animated slideInUp" ui-sref="workshop({id: $index})">
+				<img ng-src="{{w.url}}" width="230px"  class="workshopcard">
+				<div class="event_caption">{{w.name}}</div>
+			</div>
+		</div>
+<!--	</div>-->
+</div>
+</div>

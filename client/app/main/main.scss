@@ -1,0 +1,19 @@
+.main_nav_button {
+	font-weight: 700 !important;
+	padding: 0 32px !important;
+}
+.sub_nav_button {
+	padding: 0 45px !important;
+	font-weight: 400 !important;
+}
+#slide-out > li > a,
+#slide-out > li > ul > li > a,
+#slide-out > li > ul > li > div > ul > li > a{
+  color: white;
+}
+#slide-out > li > ul > li > div > ul > li > a {
+  background-color: #0d47a1;
+}
+#slide-out > li > ul > li > div > ul > .active > a {
+  background-color: #0C4399;
+}

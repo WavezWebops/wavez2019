@@ -1,0 +1,66 @@
+<div class="content_space" style="overflow-x: hidden;">
+	<br>
+	<h1 class="main_heading">
+		{{eventCtrl.event.name}}
+	</h1>
+	<div class="center-align" id="event_buttons">
+		<a class="waves-effect waves-light btn black darken-4" ng-hide="eventCtrl.event.writeup==null" ng-click="eventCtrl.index=0">Home</a>
+		<a class="waves-effect waves-light btn black darken-4" ng-hide="eventCtrl.event.rules==null" ng-click="eventCtrl.index=1">Format</a>
+		<a class="waves-effect waves-light btn black darken-4" ng-hide="eventCtrl.event.prize==null" ng-click="eventCtrl.index=2">Prize</a>
+		<a class="waves-effect waves-light btn black darken-4" ui-sref="dashboard" ng-hide="(eventCtrl.event.name=='Daily Events')||(eventCtrl.event.name=='Kryptx')||(eventCtrl.event.name=='Open House')||(eventCtrl.event.name=='Online T-shirt Design')">Register</a>
+		<a class="waves-effect waves-light btn black darken-4" ng-click="eventCtrl.index=3">Contact</a><a class="waves-effect waves-light btn-floating black darken-4 btn-large" ui-sref="events"><i class="material-icons">clear</i></a>
+	</div>
+	<br>
+	<br>
+	<div class="whitebg widcard animated fadeIn card-panel "  ng-hide="(eventCtrl.event.writeup==null)||(eventCtrl.index!=0)">
+		<div class="col s6 m6 l3">
+			<img src="https://res.cloudinary.com/abinthomasonline/image/upload/c_scale,f_auto,q_auto:eco,w_170/v1487735026/Wavez2017/megaphone.png" width="170px">
+		</div>
+		<div class="col s12 m12 l9 blue-grey-text text-darken-4 left_align event_caption">
+			<p>
+				{{eventCtrl.event.writeup}}
+			</p>
+		</div>
+	</div>
+	<div class="whitebg animated fadeIn card-panel widcard" ng-hide="(eventCtrl.event.rules==null)||(eventCtrl.index!=1)">
+		<div class="col s6 m6 l3">
+			<img src="https://res.cloudinary.com/abinthomasonline/image/upload/c_scale,f_auto,q_auto:eco,w_170/v1487735028/Wavez2017/rules.png" width="170px">
+		</div>
+		<div class="col s12 m12 l9 blue-grey-text text-darken-4 left_align event_caption">
+			<ul>
+				<li ng-repeat="r in eventCtrl.event.rules">
+					<p>
+						✓ <span ng-bind-html="r"></span>
+					</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="whitebg animated fadeIn card-panel widcard" ng-hide="(eventCtrl.event.prize==null)||(eventCtrl.index!=2)">
+		<div class="col s6 m6 l3">
+			<img src="https://res.cloudinary.com/abinthomasonline/image/upload/c_scale,f_auto,q_auto:eco,w_170/v1487735028/Wavez2017/prize.png" width="170px">
+		</div>
+		<div class="col s12 m12 l9 blue-grey-text text-darken-4 left_align event_caption">
+			<ul>
+				<li ng-repeat="r in eventCtrl.event.prize">
+			<p>
+				<span ng-bind-html="r"></span>
+			</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="whitebg animated fadeIn card-panel widcard" ng-hide="eventCtrl.index!=3">
+		<div class="col s6 m6 l3">
+			<img src="https://res.cloudinary.com/abinthomasonline/image/upload/c_scale,f_auto,q_auto:eco,w_170/v1487735026/Wavez2017/contact.png" width="170px">
+		</div>
+		<div class="col s12 m12 l9 blue-grey-text text-darken-4 left_align event_caption">
+			<p ng-repeat="c in eventCtrl.event.contacts">
+				{{c.name}}
+				<br>
+				{{c.mobile}} <br> {{c.email}}
+				<br>
+				<br>
+			</p>
+		</div>
+	</div>

@@ -1,0 +1,63 @@
+<div class="content_space" style="overflow-x: hidden;"><br>
+  <div style="font-size:1.2em;">
+<!--    <marquee direction = "left">
+      <a href="https://goo.gl/forms/VIQ5c7mzEJEVOmoW2" target="_blank">Click here to pay the registration fees for the RoboRevolution Workshop.</a>
+    </marquee>
+    <div ui-sref-active="active"><a style="color:#34B484;font-size: 20px;display:block;" ui-sref="hospitality">Book Accommodation now !!</a></div>
+  </div>-->
+  <h3 class="main_heading" style="font-size: 40px;">Workshops</h3>
+  <div class="row">
+    <ul class="col collapsible popout offset-l1 l10 s12 m12" data-collapsible="accordion" style="text-align: left;">
+      <li ng-repeat="w in vm.workshops">
+        <div class="collapsible-header main_heading hoverable animated fadeIn" style="font-size: 20px;overflow-x: hidden;">
+           <img ng-src="{{w.url}}" style="border-radius: 0px;vertical-align: middle;" class="z-depth-1"><span style="height: 100%;"></span>&nbsp;&nbsp;&nbsp;{{w.name}}<i class="material-icons right green-text text-lighten-1" ng-show="w.active">bookmark</i>
+        </div>
+        <div class="collapsible-body padding20 white">
+          <div ng-hide="w.active">
+<!--            <h5>Instructions</h5>-->
+            <ul>
+              <li ng-repeat="i in w.instructions">&#8902; <span ng-bind-html="i"></span></li>
+            </ul>
+            <div style="padding: 20px; text-align: center;">
+              <a class="waves-effect waves-light blue darken-4 btn" ng-click="vm.Eregister(w)">Register</a>
+            </div>
+          </div>
+          <div style="text-align: center;" ng-show="w.active">
+            <h5>Registration requested!</h5>
+<!--            <p>Ping events@wavez.org for any queries.</p>-->
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <h3 class="main_heading" style="font-size: 40px;">Events</h3>
+  <div class="row">
+    <ul class="col collapsible popout offset-l1 l10 s12 m12" data-collapsible="accordion" style="text-align: left;">
+      <li ng-repeat="e in vm.events">
+        <div class="collapsible-header main_heading hoverable animated fadeIn" style="font-size: 20px;overflow-x: hidden;">
+           <img ng-src="{{e.url}}" style="border-radius: 0px;vertical-align: middle;" class="z-depth-1"><span style="height: 100%;"></span>&nbsp;&nbsp;&nbsp;{{e.name}}<i class="material-icons right green-text text-lighten-1" ng-show="e.active">bookmark</i>
+        </div>
+        <div class="collapsible-body padding20 white">
+          <div ng-hide="e.active">
+<!--            <h5>Instructions</h5>-->
+            <ul>
+              <li ng-repeat="i in e.instructions">&#8902; <span ng-bind-html="i"></span></li>
+            </ul>
+            <div style="padding: 20px; text-align: center;">
+              <a class="waves-effect waves-light blue darken-4 btn" ng-click="vm.Eregister(e)">Register</a>
+            </div>
+          </div>
+          <div style="text-align: center;" ng-show="e.active">
+            <h5>Registered. Good Luck for the event!</h5>
+<!--            <p>Ping events@wavez.org for any queries.</p>-->
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+</script>

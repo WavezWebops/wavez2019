@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th , td  {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: blue;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<div ng-app="" ng-init="events=[{event:'Events',day1:'Saturday',day2:'sunday'},
+{event:'Robo revolution workshop',day1:'',day2:'10:00 AM - 1:00 PM'},
+{event:'RC Boats',day1:'10:00 AM-1:00 AM',day2:''},
+{event:'Kryptix',day1:'',day2:''},
+{event:'IDP',day1:'',day2:''},
+{event:'Gamedrone',day1:'',day2:'1:00 PM-3:00 PM'},
+{event:'investigation case',day1:'Whole Day',day2:''},
+{event:'Quizathon',day1:'3:00 PM-4:30 PM',day2:''},
+{event:'Splash',day1:'1:00 PM-2:30 PM',day2:''},
+{event:'Online Tshirt Design',day1:'',day2:''},
+{event:'Robo revolution',day1:'',day2:'3:00 PM-5:00 PM'},
+{event:'Stability session',day1:'9:00 PM-10:00 PM',day2:''}
+{event:'Web application workshop',day1:'',day2:'1:00PM-3:30PM'}
+]">
+<table>
+  <tr ng-repeat="x in events">
+    <td>{{ x.event }}</td>
+    <td>{{ x.day1 }}</td>
+    <td>{{ x.day2 }}</td>
+  </tr>
+</table>
+
+</div>
+
+
+
+</body>
+</html>

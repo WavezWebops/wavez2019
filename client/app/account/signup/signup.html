@@ -1,0 +1,61 @@
+<br>
+<br>
+<div class="content_space">
+  <div class="card-panel z-depth-1 animated fadeIn ngcard" style="">
+    <h1 class="main_heading">
+      Register
+    </h1>
+    <!-- <div class="row"> -->
+      <form class="form col s12 m8 offset-m2 offset-l3 l6" name="form" ng-submit="vm.register(form)" novalidate>
+
+        <div class="input-field" ng-class="{ 'has-success': form.name.$valid && vm.submitted, 'has-error': form.name.$invalid && vm.submitted }">
+          <input type="text" name="name" class="form-control" ng-model="vm.user.name" required/>
+          <label class="active" style="font-size:14px;">Name</label>
+          <p ng-show="form.name.$error.required && vm.submitted">A name is required</p>
+        </div>
+<br>
+        <div class="input-field" ng-class="{ 'has-success': form.email.$valid && vm.submitted, 'has-error': form.email.$invalid && vm.submitted }">
+          <input type="email" name="email" class="form-control" ng-model="vm.user.email" required mongoose-error/>
+          <label class="active" style="font-size:14px;">Email</label>
+          <p ng-show="form.email.$error.email && vm.submitted">Doesn't look like a valid email.</p>
+          <p ng-show="form.email.$error.required && vm.submitted">What's your email address?</p>
+          <p ng-show="form.email.$error.mongoose">{{ vm.errors.email }}</p>
+        </div>
+<br>
+        <div class="input-field" ng-class="{ 'has-success': form.password.$valid && vm.submitted, 'has-error': form.password.$invalid && vm.submitted }">
+          <input type="password" name="password" class="form-control" ng-model="vm.user.password" ng-minlength="3" required mongoose-error/>
+          <label class="active" style="font-size:14px;">Password</label>
+          <p ng-show="(form.password.$error.minlength || form.password.$error.required) && vm.submitted">Password must be at least 3 characters.</p>
+          <p ng-show="form.password.$error.mongoose">{{ vm.errors.password }}</p>
+        </div>
+<br>
+        <div class="input-field" ng-class="{ 'has-success': form.confirmPassword.$valid && vm.submitted, 'has-error': form.confirmPassword.$invalid && vm.submitted }">
+          <input type="password" name="confirmPassword" class="form-control" ng-model="vm.user.confirmPassword" match="vm.user.password" ng-minlength="3" required/>
+          <label class="active" style="font-size:14px;">Confirm Password</label>
+          <p ng-show="form.confirmPassword.$error.match && vm.submitted">Passwords must match.</p>
+        </div>
+<br>
+        <div class="input-field" ng-class="{ 'has-success': form.college.$valid && vm.submitted, 'has-error': form.college.$invalid && vm.submitted }">
+          <input type="text" name="college" class="form-control" ng-model="vm.user.college" required/>
+          <label class="active" style="font-size:14px;">Institution</label>
+          <p ng-show="form.college.$error.required && vm.submitted">This cannot be left blank.</p>
+        </div>
+<br>
+        <div class="input-field" ng-class="{ 'has-success': form.mobile.$valid && vm.submitted, 'has-error': form.mobile.$invalid && vm.submitted }">
+          <input type="text" name="mobile" class="form-control" ng-model="vm.user.mobile" required/>
+          <label class="active" style="font-size:14px;">Phone</label>
+          <p ng-show="form.mobile.$error.required && vm.submitted">This cannot be left blank.</p>
+        </div>
+<br>
+        <div>
+          <button class="btn btn-primary" style="background-color:black;" type="submit">
+            Register
+          </button>
+          <button class="waves-effect waves-blue btn-flat" ui-sref="login">
+            Login
+          </button>
+        </div>
+      </form>
+    <!-- </div> -->
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="content_space">
+	<h1 class="main_heading">
+		Events
+	</h1>
+	<div class="row">
+		<div class="col s12 m6 l4" ng-repeat="e in eventsCtrl.events">
+			<div class="width250 hoverable grey lighten-4 z-depth-1 blue-grey-text text-darken-4 animated slideInUp" ui-sref="event({id: $index})">
+				<img ng-src="{{e.url}}" width="230px">
+				<div class="event_caption">{{e.name}}</div>
+			</div>
+		</div>
+	</div>
+</div>
