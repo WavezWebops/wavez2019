@@ -12,8 +12,8 @@ class EventComponent {
 //      'rules': ['A team of size 4-5 members can participate.', 'The team members can be from different colleges.', 'Registrations open.', 'Problem Statement Released (<a href="https://res.cloudinary.com/nilaygautam2007/image/upload/v1520529023/roborev_PS_zkqa9x.pdf" target="_blank">Click Here</a>).'],
 //      'prize': ['First prize: 4k', 'Second Prize: 3k'],
     	'contacts': [{
-    		'name': 'MANORANJAN',
-    		'mobile': '+91 960 066 8340',
+    		'name': 'DNYANESHWAR',
+    		'mobile': '+91 739 737 4195',
 //    		'email': 'events@wavez.org'
     	}]
       },
